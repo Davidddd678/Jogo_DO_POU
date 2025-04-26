@@ -29,7 +29,7 @@ class Pou(Criatura):
     def __init__(self, nome):
         super().__init__(nome)
 class Pou:
-
+# faz com que cada vez que um pou seja criado o "init" aconteça
     def __init__(self, niveldefome, felicidade, nome, sujidade, rebeldia, carinho,amor):
         self.nome = nome
         self.niveldefome = int(niveldefome)
@@ -140,11 +140,19 @@ class Pou:
             self.amor = 100
 
 
-
-
     def alimentar(self):
         if self.niveldefome > 0:
             self.niveldefome -= 10
+        if self.sujidade < 100:
+            self.sujidade += 5
+        if self.felicidade < 100:
+            self.felicidade += 5
+        if self.rebeldia < 100:
+            self.rebeldia -= 5
+        if self.carinho < 100:
+            self.carinho -= 5
+        if self.amor < 100:
+            self.amor -= 5
             print("Alimentaste o Teu pou!")
 
 
@@ -152,17 +160,47 @@ class Pou:
     def banho(self):
         if self.sujidade > 0:
             self.sujidade -= 50
+        if self.niveldefome < 100:
+            self.niveldefome += 5
+        if self.felicidade < 100:
+            self.felicidade -= 5
+        if self.rebeldia < 100:
+            self.rebeldia -= 5
+        if self.carinho < 100:
+            self.carinho -= 5
+        if self.amor < 100:
+            self.amor -= 5
             print("O teu pou tomou banho!")
 
     def brincar(self):
         if self.felicidade > 0:
             self.felicidade += 20
+            if self.niveldefome < 100:
+                self.niveldefome += 5
+            if self.sujidade < 100:
+                self.sujidade -= 5
+            if self.rebeldia < 100:
+                self.rebeldia -= 15
+            if self.carinho < 100:
+                self.carinho += 5
+            if self.amor < 100:
+                self.amor += 5
             print("O teu pou brincou")
 
 
     def miudodagangue(self):
         if self.rebeldia > 0:
             self.rebeldia += 25
+            if self.niveldefome < 100:
+                self.niveldefome += 5
+            if self.sujidade < 100:
+                self.sujidade += 5
+            if self.felicidade < 100:
+                self.felicidade -= 5
+            if self.carinho < 100:
+                self.carinho -= 5
+            if self.amor < 100:
+                self.amor -= 5
             print("O teu pou foi rebelde")
 
 
@@ -171,6 +209,16 @@ class Pou:
     def coracao(self):
         if self.carinho > 0:
             self.carinho += 20
+            if self.niveldefome < 100:
+                self.niveldefome += 5
+            if self.sujidade < 100:
+                self.sujidade -= 5
+            if self.felicidade < 100:
+                self.felicidade += 10
+            if self.rebeldia < 100:
+                self.rebeldia -= 5
+            if self.amor < 100:
+                self.amor += 5
             print ("O pou recebeu carinho")
 
     def brainrot(self):
@@ -180,6 +228,16 @@ class Pou:
     def amorverdadeiro(self):
         if self.amor > 0:
             self.amor += 20
+            if self.niveldefome < 100:
+                self.niveldefome += 5
+            if self.sujidade < 100:
+                self.sujidade -= 5
+            if self.felicidade < 100:
+                self.felicidade += 10
+            if self.rebeldia < 100:
+                self.rebeldia -= 15
+            if self.carinho < 100:
+                self.carinho += 5
             print(" O teu pou recebeu amor")
 
     def jogar(self):

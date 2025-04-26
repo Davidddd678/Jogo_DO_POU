@@ -19,22 +19,22 @@ AZUL_MOUSE = (150, 150, 255)
 
 cena = "MENU"
 
+# carrega as imagens e coloca numa varíavel
 image = pygame.image.load('pou.png')
-image_rect = image.get_rect(center=(400, 200))
-
 image1 = pygame.image.load('mortopou.png')
-
+casado = pygame.image.load("POU casado.png")
+logo = pygame.image.load('Menu.imagem.png')
 image2 = pygame.image.load('um-quarto-lindamente-decorado-apresentando-uma-mistura-de-design-de-interiores-moderno-e-aconchegante.png')
+
+image_rect = image.get_rect(center=(400, 200))
 tamanho_fundo = (800, 600)
 image2 = pygame.transform.scale(image2, tamanho_fundo)
 
-casado = pygame.image.load("POU casado.png")
-
-logo = pygame.image.load('Menu.imagem.png')
 tamanho_logo = (800, 600)
 logo = pygame.transform.scale(logo, tamanho_logo)
 
-
+#onde vão ficar os botões no fundo
+# os parametros são esquerda,topo,largura e altura, respetivamente
 Carinho = pygame.Rect(300, 400, 150, 50)
 Alimentar = pygame.Rect(300, 480, 150, 50)
 Brainrot = pygame.Rect(100, 400, 150, 50)
@@ -43,6 +43,9 @@ Banho = pygame.Rect(300, 550, 150, 50)
 Rebelde = pygame.Rect(550, 400, 150, 50)
 Amor = pygame.Rect(550, 480, 150, 50)
 Jogar = pygame.Rect(300, 400, 200, 50)
+
+
+#métodos quer ocorrem quando o botão é clicado
 def Carinho_clicked():
     meu_pou.coracao()
     meu_pou.limites()
@@ -102,7 +105,7 @@ while running:
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
 
-                if cena == "JOGO":
+                if cena == "JOGO": # faz com que tudo o que está la inserido só aconteça quando cena == JOGO
                     if Carinho.collidepoint(event.pos):
                         Carinho_clicked()
                     if Alimentar.collidepoint(event.pos):
@@ -118,7 +121,7 @@ while running:
                     if Banho.collidepoint(event.pos):
                         Banho_clicked()
 
-                if cena == "MENU":
+                if cena == "MENU": # faz com que tudo o que está la inserido só aconteça quando cena == MENU
                     if Jogar.collidepoint(event.pos):
                         Jogar_clicked()
                         cena = "JOGO"
@@ -128,7 +131,7 @@ while running:
 
 
 
-    font = pygame.font.SysFont('Arial', 30)
+    font = pygame.font.SysFont('Arial', 30)# Customiza os botoes
     text1 = font.render("Carinho", True, (255, 255, 255))
     text2 = font.render("Alimentar", True, (255, 255, 255))
     text3 = font.render("Brainrot", True, (255, 255, 255))

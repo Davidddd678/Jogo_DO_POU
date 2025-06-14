@@ -113,7 +113,7 @@ class Pou:
             pygame.quit()
             sys.exit()
 
-    def limites(self):
+    def limites(self):#faz com que as variáveis não consigam subir de 100 e descer de 0
         if self.niveldefome < 0:
             self.niveldefome = 0
         elif self.niveldefome > 100:
@@ -242,6 +242,14 @@ class Pou:
 
     def jogar(self):
         ()
+    def Pong(self):
+        ()
+    def Voltar(self):
+        ()
+    def IA(self):
+        ()
+    def Humanos(self):
+        ()
 
     def stats(self):
         print(f"Felicidade: {self.felicidade}")
@@ -251,21 +259,6 @@ class Pou:
         print(f"carinho: {self.carinho}")
         print(f"amor: {self.amor}")
 
-
-
-
-
-print(f""" Instruções para o jogo
-
-    [B]rincar - aumenta a felicidade
-    [A]limentar - diminui o niveldefome
-    [Ba]nho - diminui a sujidade
-    [G]angue - faz o teu_pou virar rebelde
-    [Br]ainrot- o teu_pou dirá uma frase de brainrot
-    [C]arinho - faz carinho ao teu_pou
-    [Am]or - dá o amor verdadeiro ao teu pou
-    [S]tatus - mostra os status do teu_pou
-    """)
 
 
 
